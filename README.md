@@ -23,4 +23,4 @@ To perform crawling, inside the notebook, change the name of the `data/some-name
 
 The execution time depends on the amount of data. 
 
-***"Note: The crawl code can be run until 27/4/2024. There may be modifications to the code to address pop-ups or next-page buttons***
+***Note: The crawling code can be executed until April 27, 2024. Any necessary adjustments to the code may include handling pop-ups or navigating through next-page buttons. Additionally, ensure compatibility with Chrome version 122.0 or refer to the documentation to determine the suitable Chrome version for the Chrome driver.***
