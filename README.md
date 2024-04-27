@@ -22,4 +22,5 @@ It will create a `data` folder containing the file with links to each product.
 To perform crawling, inside the notebook, change the name of the `data/some-name.csv` and replace the `some-name` with the current file name.
 
 The execution time depends on the amount of data. 
+
 ***"Note: The crawl code can be run until 27/4/2024. There may be modifications to the code to address pop-ups or next-page buttons***
