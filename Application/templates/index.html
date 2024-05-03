@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="title">
+    <h1>Product Search</h1>
+</div>
+
+<div class="search-bar">
+    <form action="/search" method="post">
+        <div class="search-item">
+            <i class="material-icons">search</i>
+            <input type="text" name="query" placeholder="Search for products">
+        </div>
+        <div class="search-item">
+            <i class="material-icons">memory</i>
+            <input type="text" name="ram" placeholder="RAM (GB)">
+        </div>
+        <div class="search-item">
+            <i class="material-icons">storage</i>
+            <input type="text" name="storage" placeholder="Storage (GB)">
+        </div>
+        <div class="price-range">
+            <div class="search-item">
+                <i class="material-icons">attach_money</i>
+                <input type="text" name="min_price" placeholder="From">
+            </div>
+            <div class="search-item">
+                <i class="material-icons">attach_money</i>
+                <input type="text" name="max_price" placeholder="To">
+            </div>
+        </div>
+
+        <div class="sort-func">
+            <input type="checkbox" name="sort-option" value="sorting">
+            <label for="dropdown" class="checkbox-label">Sort by:</label>
+
+            <select id="dropdown" value="select-val" name="value-type">
+                {% for option in options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select> 
+        </div>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<a href="/chat" class="chat-button">
+    <button type="submit">Chat with AI</button>   
+</a>
+
+{% if error_message %}
+    <div class="error-msg">
+        <p class="error-no-info">{{ error_message }}</p>
+    </div>
+{% endif %}
+
+{% endblock content%}
+
+{% block credit %}
+<div class="credit">
+    <p>A project made with love and passion <3 </p>
+</div>
+{% endblock credit %}

@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+/* index */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container .title {
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 0px 10px 5%;
+    border-radius: 8px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.container input::placeholder {
+    left: 5%;
+}
+
+.container .search-bar {
+    position: relative;
+}
+
+.container .search-item {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.container .price-range {
+    width: 100%;
+}
+
+.container .price-range .search-item {
+    /* width: 50%; */
+    display: inline-block;
+    width: calc(50% - 2px);
+}
+
+.container .price-range input[type="text"] {
+    padding: 10px 0px 10px 10%;
+}
+
+.container .price-range input::placeholder {
+    left: 10%;
+}
+
+.container .material-icons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.container .checkbox-label {
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.container .sort-func {
+    align-self: flex-start;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 15%;
+    padding: 10px 20px;
+    background-color: #77B0AA;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+    text-align: center;
+}
+
+button:hover {
+    width: 20%;
+    background-color: #003C43;
+}
+
+.credit {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.container .chat-button  {
+display: flex;
+justify-content: end;
+}
+/* 
+.container .chat-button > button {
+    
+} */
+
+/* Results */
+
+.product-show, tr, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.container .error-no-info {
+    width: 50%;
+    color: red;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #FFE4C9;
+    padding: 16px 0 16px 16px;
+}
+
+.container .return-prev {
+    margin: 20px 0px;
+    display: block;
+    text-decoration:underline;
+}
+
+.container .return-prev:hover {
+    color: #77B0AA;
+}
+
+.container .search-results {
+    margin-top: 20px;
+}
+
+.container .item-nothing {
+    text-align: center;
+}
+
+.container .item-show :last-child {
+    text-decoration: underline;
+    font-style: italic;
+}

@@ -1,0 +1,51 @@
+<!-- Results Page -->
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Search Results</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="title">
+        <h1>Search Results</h1>
+    </div>
+
+    <a href="/" class="return-prev">Back to search</a>
+
+    <table class="product-show">
+        
+        <tr>
+            <th>Phone Name</th>
+            <th>RAM (GB)</th>
+            <th>Memory (GB)</th>
+            <th>Price</th>
+            <th>Store</th>
+            <!-- <th>Score</th> -->
+            <th>Link</th>
+        </tr> 
+
+        {% if results %}
+        {% for product in results %}
+            <tr class="item-show">
+                <td>{{ product.phone_name }}</td>
+                <td>{{ product.ram }}</td>
+                <td>{{ product.memory }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.distributor }}</td>
+                <!-- <td>{{ product.sentiment_score }}</td> -->
+                <td><a href="{{ product.Link }}">Link to the product</a></td>                 
+            </tr>
+        {% endfor %}
+
+        {% else %}
+            <tr class="error-msg">
+                <td colspan="6" class="error-no-info">{{ error_message }}</td>
+            </tr>
+        {% endif %}
+
+    </table>
+</div>
+
+{% endblock content %}
