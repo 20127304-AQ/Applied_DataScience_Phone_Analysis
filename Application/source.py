@@ -18,7 +18,7 @@ def read_csv(file):
 
 if genai:
     try:
-        genai.configure(api_key="AIzaSyAWd661PddbNt3Z6H_5-1bY1z7cYkXoM-I")  # Replace with your actual key
+        genai.configure(api_key="ENTER YOUR API GEMINI KEY")  # Replace with your actual key
     except Exception as e:
         print(f"Error configuring `genai`: {e}")
 
