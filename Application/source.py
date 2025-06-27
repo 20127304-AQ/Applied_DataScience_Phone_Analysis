@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
-
 import csv
 import markdown
 
 try:
-    import google.generativeai as genai
+    from google import genai
 except ModuleNotFoundError:
     print("Error: `google.generativeai` module not found.")
 
@@ -16,19 +15,21 @@ def read_csv(file):
         products = list(reader)
     return products
 
-if genai:
-    try:
-        genai.configure(api_key="ENTER YOUR API GEMINI KEY")  # Replace with your actual key
-    except Exception as e:
-        print(f"Error configuring `genai`: {e}")
+client = None
+try:
+    client = genai.Client(api_key="API_KEY")
+except Exception as e:
+    print(f"Error initializing genai.Client: {e}")
 
 def generate_response(input_text):
-    if not genai:
-        return "Generative AI module not available."
+    if not client:
+        return "Generative AI client not available."
 
     try:
-        model = genai.GenerativeModel(model_name="gemini-pro")
-        response = model.generate_content(input_text)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=input_text
+        )
         return response.text
     except Exception as e:
         print(f"Error generating response: {e}")
